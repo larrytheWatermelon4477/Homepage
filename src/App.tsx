@@ -1,32 +1,28 @@
 import React from "react";
 import "./App.css";
 
+import Header from "./Components/Header";
+import ProjectList from "./Components/ProjectList";
+
+
 function App() {
+
   const projects = [
     { name: "Lab 2 — D3 Bar Chart", url: "#" },
     { name: "Lab 3 — D3 Interactions", url: "#" },
     { name: "Final Project", url: "#" },
+    { name: "FAT32 Filesystem Parser", url: "#" },
   ];
 
   return (
     <div className="App">
-      <header style={{ padding: "48px 24px" }}>
-        <h1>Your Name</h1>
-        <p>CIS 4930 · Introduction to Data Visualization · Fall 2026</p>
-      </header>
-
-      <main style={{ padding: "0 24px" }}>
-        <h2>Projects</h2>
-        <ul>
-          {projects.map((p) => (
-            <li key={p.name}>
-              <a href={p.url}>{p.name}</a>
-            </li>
-          ))}
-        </ul>
-      </main>
+      <Header />
+      <ProjectList projects={projects} />
     </div>
   );
 }
+
+
+
 
 export default App;
