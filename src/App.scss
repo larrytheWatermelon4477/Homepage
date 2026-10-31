@@ -1,8 +1,17 @@
 $fsu-garnet: #782f40;
+$fsu-gold: #ceb888;
 
 .App {
-  background-color: $fsu-garnet;
   min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  color: $fsu-garnet;
+}
+
+h2 {
+  color: $fsu-gold;
 }
 
 
