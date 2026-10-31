@@ -1,28 +1,27 @@
-import React from "react";
 import "./App.scss";
 
-import Header from "./Components/Header";
-import ProjectList from "./Components/ProjectList";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Projects from "./Pages/Projects";
 
 function App() {
-
-  const projects = [
-    { name: "Lab 2 — D3 Bar Chart", url: "#" },
-    { name: "Lab 3 — D3 Interactions", url: "#" },
-    { name: "Final Project", url: "#" },
-    { name: "FAT32 Filesystem Parser", url: "#" },
-  ];
-
   return (
-    <div className="App">
-      <Header />
-      <ProjectList projects={projects} />
-    </div>
+    <BrowserRouter>
+      <nav style={{ padding: "20px" }}>
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/about">About</Link> |{" "}
+        <Link to="/projects">Projects</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-
-
 
 export default App;
