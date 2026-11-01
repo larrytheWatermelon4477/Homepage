@@ -1,52 +1,89 @@
-// ---- Palette ----
-$purple: #7211b8;
-$blue: #454ad4;
-$grey-900: #2b2d33; // main text
-$grey-600: #5f6370; // secondary text
-$grey-200: #e3e5ea; // borders
-$grey-100: #f4f5f7; // page background
-$white: #ffffff;
+// ---- Light theme (default) ----
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --text: #2b2d33;
+  --text-muted: #5f6370;
+  --border: #e3e5ea;
+  --purple: #5b4b8a;
+  --blue: #3b5ba9;
+}
 
+// ---- Dark theme ----
+[data-theme="dark"] {
+  --bg: #1c1d22;
+  --surface: #26282f;
+  --text: #e6e7eb;
+  --text-muted: #a3a7b3;
+  --border: #3a3d46;
+  --purple: #b3a7ec;
+  --blue: #8fb0f0;
+}
 
+// ---- Base ----
 body {
   margin: 0;
-  background-color: $grey-100;
-  color: $grey-900;
+  background-color: var(--bg);
+  color: var(--text);
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-h1 {
-  color: $purple;
-}
-
-h2 {
-  color: $blue;
-}
-
-a {
-  color: $blue;
-
-  &:hover {
-    color: $purple;
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
   }
 }
 
+h1 {
+  color: var(--purple);
+}
+
+h2 {
+  color: var(--blue);
+}
+
+a {
+  color: var(--blue);
+
+  &:hover {
+    color: var(--purple);
+  }
+}
+
+// ---- Navigation (same gradient in both themes) ----
 .site-nav {
   display: flex;
+  align-items: center;
   gap: 24px;
   padding: 16px 24px;
-  background: linear-gradient(90deg, $purple, $blue);
+  background: linear-gradient(90deg, #5b4b8a, #3b5ba9);
 
   a {
-    color: $white;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
 
     &:hover {
-      color: $white;
+      color: #ffffff;
       text-decoration: underline;
     }
+  }
+}
+
+.theme-toggle {
+  margin-left: auto; // pushes the button to the right
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font: inherit;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
   }
 }
 
@@ -61,7 +98,7 @@ a {
   display: flex;
   gap: 24px;
   align-items: center;
-  flex-wrap: wrap; // stacks on narrow screens
+  flex-wrap: wrap;
 }
 
 .profile-photo {
@@ -69,7 +106,7 @@ a {
   height: 160px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid $purple;
+  border: 4px solid var(--purple);
 }
 
 .experience ul {
@@ -78,20 +115,20 @@ a {
 }
 
 .experience li {
-  background: $white;
-  border: 1px solid $grey-200;
-  border-left: 4px solid $blue;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--blue);
   border-radius: 6px;
   padding: 12px 16px;
   margin-bottom: 16px;
 
   h3 {
     margin: 0;
-    color: $grey-900;
+    color: var(--text);
   }
 }
 
 .dates {
-  color: $grey-600;
+  color: var(--text-muted);
   font-size: 0.9em;
 }
