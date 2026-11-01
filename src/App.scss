@@ -1,49 +1,97 @@
-$fsu-garnet: #782f40;
-$fsu-gold: #ceb888;
+// ---- Palette ----
+$purple: #7211b8;
+$blue: #454ad4;
+$grey-900: #2b2d33; // main text
+$grey-600: #5f6370; // secondary text
+$grey-200: #e3e5ea; // borders
+$grey-100: #f4f5f7; // page background
+$white: #ffffff;
 
-.App {
-  min-height: 100vh;
-  background-color: #f5f5f5;
+
+body {
+  margin: 0;
+  background-color: $grey-100;
+  color: $grey-900;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
 }
 
 h1 {
-  color: $fsu-garnet;
+  color: $purple;
 }
 
 h2 {
-  color: $fsu-gold;
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  color: $blue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+a {
+  color: $blue;
+
+  &:hover {
+    color: $purple;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.site-nav {
   display: flex;
-  flex-direction: column;
+  gap: 24px;
+  padding: 16px 24px;
+  background: linear-gradient(90deg, $purple, $blue);
+
+  a {
+    color: $white;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}
+
+// ---- About page ----
+.about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.about-me {
+  display: flex;
+  gap: 24px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap; // stacks on narrow screens
 }
 
-.App-link {
-  color: #61dafb;
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid $purple;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.experience ul {
+  list-style: none;
+  padding: 0;
+}
+
+.experience li {
+  background: $white;
+  border: 1px solid $grey-200;
+  border-left: 4px solid $blue;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+
+  h3 {
+    margin: 0;
+    color: $grey-900;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.dates {
+  color: $grey-600;
+  font-size: 0.9em;
 }
