@@ -132,3 +132,20 @@ a {
   color: var(--text-muted);
   font-size: 0.9em;
 }
+
+.resume-link {
+  display: block;
+  width: fit-content;
+  margin-top: 16px;
+  padding: 8px 18px;
+  border: 2px solid var(--purple);
+  border-radius: 999px;
+  color: var(--purple);
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    background: var(--purple);
+    color: var(--bg);
+  }
+}

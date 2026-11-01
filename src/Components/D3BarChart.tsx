@@ -87,7 +87,7 @@ function D3BarChart() {
 
   return (
     <div>
-      <h2>My D3 Visualization</h2>
+      <h2>My D3 Visualization Chart:</h2>
       <svg ref={svgRef}></svg>
     </div>
   );

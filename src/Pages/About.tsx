@@ -10,11 +10,22 @@ function About() {
           <h1>Hi, I'm Sanai</h1>
           <p>
             I'm a Computer Science student interested in software development, data visualization,
-            and building useful techniclogical tools that can be benefical for the public well-being.
+            and building useful technological tools that can be beneficial for the public well-being.
             I am interested in going to graduate school to pursue a Masters in Health Informatics/Bioinformatics
-            and Public Health. I would really like to make an impact in the real-world by finding solutions for major
+            and Public Health. I would really like to make an impact in the real world by finding solutions for major
             health and environmental issues people face daily with the help of technology.
+
           </p>
+
+
+        <a
+                href={`${process.env.PUBLIC_URL}/resume.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="resume-link"
+>
+                View my resume
+        </a>
         </div>
       </section>
 
